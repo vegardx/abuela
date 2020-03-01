@@ -1,0 +1,17 @@
+{
+  "name": "abuela",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "concurrently": "^5.1.0",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail \"cd api && nodemon npm run start\" \"cd client && npm run start\""
+  },
+  "author": "",
+  "license": "ISC"
+}

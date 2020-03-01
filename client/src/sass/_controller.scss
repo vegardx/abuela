@@ -1,0 +1,42 @@
+.controller-page {
+    .thumbs {
+        img {
+            opacity: .8;
+            transition: opacity .5s;
+            border: 5px solid transparent;
+            cursor: pointer;
+
+            &.selected {
+                opacity: 1;
+                border: 5px solid green;
+            }
+        }
+    }
+
+    .active {
+        height: 50vh;
+
+        .grid-x {
+            .cell {
+                height: 100%;
+
+                img {
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    .thumbs {
+        overflow-y: scroll;
+    }
+
+    .grid-container {
+        .grid-x {
+            height: 50vh;
+        }
+        .grid-y {
+            height: 100vh;
+        }
+    }
+}
