@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PhotoService from "../services/photos";
+import { ImageCache } from "react-preload";
 
 class ViewerPage extends Component {
     constructor(props) {
@@ -14,6 +15,14 @@ class ViewerPage extends Component {
     componentDidMount() {
         this.fetchActive();
         setInterval(this.fetchActive, 500);
+
+        setTimeout(() => {
+            this.photoService.getAll().then(res => {
+                res.data.forEach(photo => {
+                    ImageCache.add(photo.url);
+                });
+            });
+        }, 3000);
     }
 
     fetchActive = () => {
