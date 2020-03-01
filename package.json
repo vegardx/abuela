@@ -11,7 +11,7 @@
   "devDependencies": {},
   "scripts": {
     "dev": "concurrently --kill-others-on-fail \"cd api && nodemon npm run start\" \"cd client && npm run start\"",
-    "build": "cd client && npm install && npm run build",
+    "build": "cd api && npm install && cd ../client && npm install && npm run build",
     "start": "cd api && nodemon npm run start"
   },
   "author": "",
