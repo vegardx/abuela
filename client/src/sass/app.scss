@@ -58,6 +58,9 @@
 @include foundation-visibility-classes;
 // @include foundation-prototype-classes;
 
+body {
+    background: #000;
+}
 
 @import "controller";
 @import "viewer";
