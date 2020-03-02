@@ -9,7 +9,7 @@ In order to add pictures you have to create a folder in the root of the project 
   - docker-compose
 
 ## Build and run locally
-To build and run it locally you need NodeJS. To change the URL or port the application is served from you can set the environment variables `PORT=8080` and `APP_URL="http://localhost:8080/` to appropriate values. 
+To build and run it locally you need NodeJS. To change the URL or port the application is served from you can set the environment variables `PORT="8080"` and `APP_URL="http://localhost:8080/"` to appropriate values. 
 
   - npm install
   - npm run build
