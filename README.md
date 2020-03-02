@@ -14,13 +14,13 @@ To build and run it locally you need NodeJS. To change the URL or port the appli
   - npm install
   - npm run build
   - npm run start
-  - Go to: http://localhost:8080/
+  - Go to: [http://localhost:8080/](http://localhost:8080/) ([http://localhost:8080/controller](http://localhost:8080/controller))
 
 ## Build and run in docker
 To build and run it in docker you need docker and docker-compose.
   - docker-compose up [-d] [--build]
-  - Go to: http://localhost:8080/ 
-
+  - Go to: [http://localhost:8080/](http://localhost:8080/) ([http://localhost:8080/controller](http://localhost:8080/controller))
+  
 ## Screenshots
 ![Controller](assets/controller.png)
 ![Viewer](assets/viewer.png)
