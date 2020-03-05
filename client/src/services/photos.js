@@ -2,9 +2,9 @@ import axios from "axios";
 import BaseService from "./base";
 
 class PhotoService extends BaseService {
-  getAll() {
+  getAll(album) {
     return axios.get(
-      `${this.apiRootDynamic}photos`
+      `${this.apiRootDynamic}photos?album=${album || ''}`
     );
   }
 
@@ -14,11 +14,12 @@ class PhotoService extends BaseService {
     );
   }
 
-  setSelected(id) {
+  setSelected(photo) {
     return axios.post(
       `${this.apiRootDynamic}photos/active`,
       {
-          id: id
+          album: photo.album,
+          id: photo.id
       }
     );
   }

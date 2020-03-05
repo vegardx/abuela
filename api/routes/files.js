@@ -4,8 +4,8 @@ const path = require("path");
 
 const baseroot = path.join(__dirname.replace('/api', '') , '../');
 
-router.get('/photos/:photo', (req, res) => {
-    res.sendFile(path.join(`${baseroot}/photos/${req.params.photo}`));
+router.get('/photos/view/*', (req, res) => {
+    res.sendFile(path.join(`${baseroot}/photos/${req.params[0]}`));
 });
 
 router.get("/*", (req, res) => {

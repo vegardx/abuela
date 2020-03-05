@@ -14,16 +14,12 @@
     }
 
     .active {
-        height: 50vh;
+        .active-inner {
+            height: 100%;
+        }
 
-        .grid-x {
-            .cell {
-                height: 100%;
-
-                img {
-                    height: 100%;
-                }
-            }
+        img {
+            height: 100%;
         }
     }
 
@@ -32,11 +28,19 @@
     }
 
     .grid-container {
-        .grid-x {
-            height: 50vh;
-        }
-        .grid-y {
+        > .grid-y {
             height: 100vh;
+        }
+    }
+
+    .album {
+        background: $white;
+        color: $black;
+        display: block;
+        padding: .5rem;
+
+        &:hover {
+            background: #ccc;
         }
     }
 }

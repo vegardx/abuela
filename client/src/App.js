@@ -14,9 +14,8 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/controller">
-            <ControllerPage />
-          </Route>
+          <Route path="/controller/:album+" component={ControllerPage} />
+          <Route path="/controller/:album?" component={ControllerPage} />
           <Route path="/">
             <ViewerPage />
           </Route>

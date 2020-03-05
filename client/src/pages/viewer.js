@@ -8,21 +8,14 @@ class ViewerPage extends Component {
 
         this.photoService = new PhotoService();
         this.state = {
-            selected: null
+            selected: null,
+            currentAlbum: null,
         };
     }
 
     componentDidMount() {
         this.fetchActive();
         setInterval(this.fetchActive, 500);
-
-        setTimeout(() => {
-            this.photoService.getAll().then(res => {
-                res.data.forEach(photo => {
-                    ImageCache.add(photo.url);
-                });
-            });
-        }, 3000);
     }
 
     fetchActive = () => {
@@ -30,6 +23,20 @@ class ViewerPage extends Component {
             this.setState({
                 selected: res.data
             });
+
+            if (res.data.album !== this.state.currentAlbum) {
+                this.setState({
+                    currentAlbum: res.data.album
+                });
+
+                setTimeout(() => {
+                    this.photoService.getAll(res.data.album).then(res => {
+                        res.data.files.forEach(photo => {
+                            ImageCache.add(photo.url);
+                        });
+                    });
+                }, 1000);
+            }
         });
     };
 
