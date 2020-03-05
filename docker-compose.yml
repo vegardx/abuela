@@ -1,0 +1,21 @@
+version: '3'
+services:
+  abuela:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PORT: "80"
+        APP_URL: "/"
+    volumes:
+      - ./photos:/abuela/photos
+    ports:
+      - "80"
+  nginx:
+    image: nginx:stable
+    volumes:
+      - ./assets/default.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - "abuela"
+    ports:
+      - "8080:80"
