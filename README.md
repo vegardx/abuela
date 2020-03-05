@@ -2,6 +2,7 @@
 The purpose of this application is to synchronize pictures between two or more devices, where one device controls which picture is present on all other devices. It consists of two elements, a controller and viewer, named accordingly. 
 
 In order to add pictures you have to create a folder in the root of the project named `photos/`. All pictures added in this directory are available for the controller. 
+You can use subfolders as "albums". The subfolder names must only contain alphanumerical characters, underscores and hyphens.
 
 ## Requirements
   - NodeJS (>=8)
